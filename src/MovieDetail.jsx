@@ -5,8 +5,8 @@ import { Poster } from './Movie';
 import Overdrive from 'react-overdrive';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
-const POSTER_PATH = 'http://image.tmdb.org/t/p/w154';
-const BACKDROP_PATH = 'http://image.tmdb.org/t/p/w1280';
+const POSTER_PATH = 'https://image.tmdb.org/t/p/w154';
+const BACKDROP_PATH = 'https://image.tmdb.org/t/p/w1280';
 
 class MovieDetail extends Component {
   state = {
