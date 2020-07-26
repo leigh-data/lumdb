@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Poster } from './Movie';
+import Overdrive from 'react-overdrive';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 const POSTER_PATH = 'http://image.tmdb.org/t/p/w154';
@@ -30,12 +31,16 @@ class MovieDetail extends Component {
     return (
       <MovieWrapper backdrop={`${BACKDROP_PATH}${movie.backdrop_path}`}>
         <MovieInfo>
-          <Poster
-            src={`${POSTER_PATH}${movie.poster_path}`}
-            alt={movie.title}
-          />
-          <h1>{movie.title}</h1>
-          <p>{movie.overview}</p>
+          <Overdrive id={movie.id}>
+            <Poster
+              src={`${POSTER_PATH}${movie.poster_path}`}
+              alt={movie.title}
+            />
+          </Overdrive>
+          <div>
+            <h1>{movie.title}</h1>
+            <p>{movie.overview}</p>
+          </div>
         </MovieInfo>
       </MovieWrapper>
     );
